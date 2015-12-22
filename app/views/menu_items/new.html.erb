@@ -1,0 +1,10 @@
+<h1>Create New Menu Items</h1>
+
+<%= form_for @menu_item do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.submit "Create Menu Items" %>
+  <% end %>

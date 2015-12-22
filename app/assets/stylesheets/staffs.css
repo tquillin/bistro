@@ -1,0 +1,18 @@
+body  {
+  background: url("http://www.thegannetgla.com/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(255, 255, 255, 1);
+}
+.staffs {
+  position: absolute;
+}
+.headerOne {
+  position: relative;
+  left: 410px;
+}
+.signUp {
+  position: relative;
+  left: 400px;
+  top: 120px;
+}

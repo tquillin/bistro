@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag    'staffs', media: 'all', 'data-turbolinks-track' => true %>
+
+<div class="staffs">
+
+  <div class="headerOne">
+      <h1>Sign Up </h1>
+  </div>
+
+  <div class="signUp">
+    <h2> New Staff Member </h2>
+    <%= form_for @staff do |f| %>
+      <p> Name <%= f.text_field :name %> </p>
+      <p> Username <%= f.text_field :username %> </p>
+      <p> Password <%= f.password_field :password %> </p>
+      <p> Password Conf. <%= f.password_field :password_confirmation %> </p>
+      <%=f.submit "Submit", class: "btn btn-primary" %>
+    <%end%>
+
+    <% if flash[:error] %>
+      <% flash[:error].each do |error| %>
+        <p class="error">
+          <%= error %>
+
+        </p>
+        <% end %>
+    <% end %>
+  </div>
+
+</div>

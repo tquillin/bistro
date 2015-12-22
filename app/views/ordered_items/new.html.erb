@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag    'ordered_items', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'ordered_items', 'data-turbolinks-track' => true %>
+
+<body onload='hideTotal()'>
+    <div id="wrap">
+      <form action="" id="menuform" onsubmit="return false;">
+
+      <div>
+          <div class="cont_order">
+              <fieldset>
+                <h1>What would they like?</h1>
+
+                <strong><label >Appetizer</label></strong><br />
+
+                <%= radio_button_tag(:selectedAppetizer, "Feeds1") %>
+                <%= label_tag(:radiolabel, "Devil Eggs $8")%><br />
+                <%= radio_button_tag(:selectedAppetizer, "Feeds2") %>
+                <%= label_tag(:radiolabel, "BBQ Pork Bao $6")%><br />
+                <%= radio_button_tag(:selectedAppetizer, "Feeds3")%>
+                <%= label_tag(:radiolabel, "Fried Chicken Salad $17")%><br />
+                <%= radio_button_tag(:selectedAppetizer, "Feeds4")%>
+                <%= label_tag(:radiolabel, "Braised Short Rib Quesadilla $15")%><br />
+
+                <strong><label >Main Course</label></strong><br />
+                <%= radio_button_tag(:selectedMainCourse, "Feeds5") %>
+                <%= label_tag(:radiolabel, "Duck Tacos $12")%><br />
+                <%= radio_button_tag(:selectedMainCourse, "Feeds6") %>
+                <%= label_tag(:radiolabel, "Chickenn Parmesan $16")%><br />
+                <%= radio_button_tag(:selectedMainCourse, "Feeds7")%>
+                <%= label_tag(:radiolabel, "Tartiflette $15")%><br />
+                <%= radio_button_tag(:selectedMainCourse, "Feeds8")%>
+                <%= label_tag(:radiolabel, "BLVD Burger $16")%><br />
+
+                <strong><label >Dessert</label></strong><br />
+                <%= radio_button_tag(:selectedDessert, "Feeds9") %>
+                <%= label_tag(:radiolabel, "Apple Cobbler $9")%><br />
+                <%= radio_button_tag(:selectedDessert, "Feeds10") %>
+                <%= label_tag(:radiolabel, "Banana Bread Pudding $9")%><br />
+                <%= radio_button_tag(:selectedDessert, "Feeds11")%>
+                <%= label_tag(:radiolabel, "Mamie's German Chocolate Cake $9")%><br />
+                <%= radio_button_tag(:selectedDessert, "Feeds12")%>
+                <%= label_tag(:radiolabel, "Two Scoops of Ice Cream $9")%><br />
+
+                <strong><label >Red Wine</label></strong><br />
+
+                <%= radio_button_tag(:selectedRedWine, "Feeds13") %>
+                <%= label_tag(:radiolabel, "2012 7 Deadly Zins Zinfandel $8 a glass")%><br />
+                <%= radio_button_tag(:selectedRedWine, "Feeds14") %>
+                <%= label_tag(:radiolabel, "2010 Alexandre Loiseau Côtes Du Rhône $10 a glass")%><br />
+                <%= radio_button_tag(:selectedRedWine, "Feeds15")%>
+                <%= label_tag(:radiolabel, "2012 Astica Malbec $6 a glass")%><br />
+                <%= radio_button_tag(:selectedRedWine, "Feeds16")%>
+                <%= label_tag(:radiolabel, "2011 Riecine Chianti Classico ($16) a glass")%><br />
+
+                <div id="totalPrice"></div>
+              </fieldset>
+              <br />
+          </div>
+              <input type="submit" id="submit" value="SubTotal" onclick="calculateTotal()">
+        </div>
+      </div>
+    </form>
+    <form id="calculator">
+        <p>Amount: <input id="amount"></p>
+        <p>Tip Percentage: <input id="percentage"></p>
+        <hr />
+        <p>Tip: <input id="tip" disabled="disabled"></p>
+        <p>Total: <input id="total" disabled="disabled"></p>
+
+        <div class="priceWithTip"></div>
+        <input type="submit" id="submitTwo" value="priceWithTip" onclick="calculateGrandTotal"/>
+    </form>
+</body>

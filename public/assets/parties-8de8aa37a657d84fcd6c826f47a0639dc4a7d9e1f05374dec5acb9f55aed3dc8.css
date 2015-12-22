@@ -1,0 +1,42 @@
+body {
+  background: url("http://www.thegannetgla.com/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+a {
+  color: rgba(255, 255, 255, 1);
+  padding: 5px;
+}
+li  {
+  list-style-type: none;
+}
+.parties {
+  position: absolute;
+}
+.staffMember {
+  position: relative;
+  left: 400px;
+}
+.navigation {
+  position: relative;
+  left: 400px;
+}
+.info {
+  position: relative;
+  left: 400px;
+  font-size: 20px;
+}
+.container {
+  position: absolute;
+}
+.top {
+  position: relative;
+  left: 400px;
+}
+.seat {
+  position: relative;
+  left: 400px;
+  line-height: 30px; 
+}

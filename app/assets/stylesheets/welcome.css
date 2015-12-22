@@ -1,0 +1,29 @@
+/*// Place all the styles related to the Welcome controller here.*/
+/*// They will automatically be included in application.css.*/
+/*// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+body {
+  background: url("http://www.thegannetgla.com/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+a {
+  color: white;
+  font-size: 30px;
+  padding: 30px;
+}
+.welcome {
+  position: absolute;
+}
+.header {
+  position: relative;
+  top: 270px;
+  left: 300px;
+}
+.navigation {
+  position: relative;
+  top: 270px;
+  left: 300px;
+}
