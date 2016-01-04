@@ -9,17 +9,17 @@ class MenuItemsController < ApplicationController
   end
   #                POST   /menu_items(.:format)          menu_items#create
   def create
-    menu_item = MenuItem.create(menu_item_params)
-    redirect_to menu_item_path(menu_item)
+    menu_items = MenuItem.create(menu_item_params)
+    redirect_to menu_items_path
   end
   #  new_menu_item GET    /menu_items/new(.:format)      menu_items#new
   def new
-    @menu_item = MenuItem.new
+    @menu_items = MenuItem.new
   end
   # edit_menu_item GET    /menu_items/:id/edit(.:format) menu_items#edit
   #      menu_item GET    /menu_items/:id(.:format)      menu_items#show
   def show
-    @menu_item = MenuItem.find(params[:id])
+    @menu_items = MenuItem.find(params[:id])
   end
   #                PATCH  /menu_items/:id(.:format)      menu_items#update
   #                PUT    /menu_items/:id(.:format)      menu_items#update

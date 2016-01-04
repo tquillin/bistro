@@ -1,1 +1,8 @@
-<h1>All Food Orders</h1>
+<h1>Current Orders</h1>
+<h3>is there where we are taken after pressing submit for an order?</h3>
+
+<% @ordered_items.each do |ordered_item| %>
+
+    <h3>Food choices: <%= ordered_item.menu_item_id %></h3>
+
+<% end %>

@@ -1,10 +1,14 @@
 class CreateOrderedItems < ActiveRecord::Migration
   def change
-    create_table :ordered_items do |t|
-      t.references :party, index: true, foreign_key: true
-      t.references :menu_item, index: true, foreign_key: true
-
-      t.timestamps null: false
-    end
+      create_table :ordered_items do |t|
+        t.integer :menu_item
+        t.integer :party
+      end
+  end
+  def change
+      change_table :ordered_items do |t|
+        t.references :menu_item
+        t.references :party
+      end
   end
 end
