@@ -7,7 +7,6 @@ class CreateOrderedItems < ActiveRecord::Migration
   end
   def change
       change_table :ordered_items do |t|
-        t.references :menu_item
         t.references :party
       end
   end
