@@ -22,6 +22,19 @@ console.log("...loaded");
  red_wine_prices["Feeds14"]=10;
  red_wine_prices["Feeds15"]=6;
  red_wine_prices["Feeds16"]=16;
+
+
+
+ function getAppetizerPrice()
+ {
+     var appetizerPrice=0;
+     var theForm = document.forms["menuform"];
+     var selectedAppetizer= theForm.elements["selectedAppetizer"];
+
+     var appetizerPrice=0;
+     appetizerPrice = document.get(selectedAppetizer)
+
+
 function getAppetizerPrice()
 {
     var appetizerPrice=0;

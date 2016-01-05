@@ -17,23 +17,25 @@ ActiveRecord::Schema.define(version: 20151220013949) do
   enable_extension "plpgsql"
 
   create_table "menu_items", force: :cascade do |t|
-    t.string   "name"
-    t.string   "category"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string  "food"
+    t.integer "price"
+    t.string  "category"
+    t.integer "party_id"
+    t.integer "staff_id"
   end
 
   create_table "ordered_items", force: :cascade do |t|
     t.integer "menu_item_id"
     t.integer "party_id"
+    t.integer "menu_item_id_id"
+    t.integer "staff_id"
   end
 
   create_table "parties", force: :cascade do |t|
+    t.string  "table_number"
     t.integer "number_of_guests"
     t.integer "paid"
     t.integer "staff_id"
-    t.string  "table_number"
   end
 
   add_index "parties", ["staff_id"], name: "index_parties_on_staff_id", using: :btree
@@ -48,3 +50,7 @@ ActiveRecord::Schema.define(version: 20151220013949) do
 
   add_foreign_key "parties", "staffs"
 end
+
+# rollback the database for tables menu_items and ordered_items, I want to include column(s). For menu_items, add column <food> and <food1>.
+# I then want to use this info/data. In theory it should populate individually on the ordered_items.index.html.erb file after being created.
+#I want two separate <food items and prices> to display so two sets of two or four cards total.  

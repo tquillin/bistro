@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
 
-  # before_action :authenticate!
+  before_filter :require_login
 
     def index
       @parties = Party.all

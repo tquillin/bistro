@@ -12,7 +12,9 @@
     <%= password_field_tag :password %>
     <%= submit_tag "Log In", class: "btn btn-primary"%>
     <%end%>
-    <a href="/staffs/new"> Create New Staff Member </a>
+    <a href="/staffs/new"> Create New Admin </a><br />
 
+<h1>Logged in staff:<br /><h2> Username: <%= current_staff.username %></h2></h1> 
 
+<h3>Log Out <%= link_to "Log", root_path %></h3>
 </div>

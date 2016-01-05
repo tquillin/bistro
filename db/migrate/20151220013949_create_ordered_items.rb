@@ -10,4 +10,11 @@ class CreateOrderedItems < ActiveRecord::Migration
         t.references :party
       end
   end
+  def change
+      change_table :ordered_items do |t|
+          t.references :party
+          t.references :menu_item_id
+          t.references :staff
+      end
+  end
 end

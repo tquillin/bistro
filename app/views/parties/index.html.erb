@@ -3,23 +3,21 @@
 <div class="parties">
 
   <div class="staffMember">
-    <h1> Welcome <%=current_staff.name%> </h1>
+    <h1> Welcome </h1>
   </div>
 
   <div class="navigation">
     <a href="/parties/new">Seat another Party</a>
-    <a href="/ordered_items/new"> Place an order </a>
+    <a href="/ordered_items/new">Place an Order</a>
   </div>
 
+
   <div class="info">
-    <h2> <%= current_staff.name%>, here are your seated tables </h2>
 
     <ul>
 
     <% @parties.each do |party| %>
        <li>Table Number: <%= party.table_number %></li>
-       <li>Number of Guests: <%= party.number_of_guests %></li>
-       <li>Have they paid?: <%= party.paid %></li>
        <li>Waitress/Waiter: <%= party.staff.name %></li><br />
     <% end %>
     </ul>

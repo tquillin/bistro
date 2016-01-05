@@ -9,15 +9,26 @@
           <div class="header">
               <h1>What would they like?</h1>
           </div>
-
           <div class="order">
+
             <%= form_for @ordered_item do |f| %>
             <%= f.label :name %>
-            <%= f.collection_select :menu_item_id, MenuItem.all, :id, :name %>
+            <%= f.collection_select :staff_id, Staff.all, :id, :name %>
             <%= f.label :table_number %>
             <%= f.collection_select :party_id, Party.all, :id, :table_number %>
 
-              <%= f.submit "Submit Order"%>
+            <%= f.label :food %>
+            <%= f.collection_select :menu_item_id, MenuItem.all, :id, :food %>
+
+            <%= f.label :price %>
+            <%= f.collection_select :menu_item_id, MenuItem.all, :id, :price, html: {class: "selectedfood1"} %>
+
+            <%= f.label :food %>
+            <%= f.collection_select :menu_item_id, MenuItem.all, :id, :food %>
+            <%= f.label :price %>
+            <%= f.collection_select :menu_item_id, MenuItem.all, :id, :price, html: {class: "selectedfood2"} %>
+
+            <%= f.submit "Submit Order"%>
             <% end %>
           </div>
 
