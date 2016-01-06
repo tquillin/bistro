@@ -35,7 +35,7 @@ end
 
 private
 def ordered_item_params
-    params.require(:ordered_item).permit(:party_id, :menu_item_id, :staff, :food, :food1 )
+    params.require(:ordered_item).permit(:party_id, :menu_item_id, :staff, :food, :food1, :price, :price1 )
 end
 
 end

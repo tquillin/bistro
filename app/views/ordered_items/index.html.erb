@@ -1,18 +1,49 @@
-<h1>Current Orders</h1>
-<h3>is there where we are taken after pressing submit for an order?</h3>
+<body onload='hideTotal()'>
+    <div id="wrap">
+      <form action="" id="menuform" onsubmit="return false;">
 
-<% @ordered_items.each do |ordered_item| %>
+      <div>
+          <div class="cont_order">
+            <h1>Current Orders</h1>
+            <h3>is there where we are taken after pressing submit for an order?</h3>
 
 
-    <h3>Staff Member: <%= current_staff.name %></h3>
+                <% @ordered_items.each do |ordered_item| %>
 
 
-<h3>Food choices 1: <%= ordered_item.menu_item.food %>
+                    <h3>Staff Member: <%= current_staff.name %></h3>
 
-  2: <%= ordered_item.menu_item.food%> </h3>
 
-    <h3>Total: $ <%= ordered_item.menu_item.price  %></h3>
+                <h3>Appetizer:
+                <br /><%= ordered_item.menu_item.food %>
+                <br /><br />Main Course :<br /> <%= ordered_item.menu_item.food1 %> </h3>
 
-    <h3>Total: $ <%= ordered_item.menu_item.price  %></h3>
+                    <h4 class="selectedAppetizer">Total: $ <%= ordered_item.menu_item.price  %></h4>
 
-<% end %>
+                    <h4 class="selectedAppetizer1">Total: $ <%= ordered_item.menu_item.price1  %></h4>
+
+
+
+                <button onclick="calculateTotal()" >Calculate</button>
+                <p id="bill">
+                    
+                </p>
+              <br />
+          </div>
+              <!-- <input type="submit" id="submit" value="SubTotal" onclick="calculateTotal()"> -->
+        </div>
+      </div>
+    </form>
+<!--
+    <form id="calculator">
+        <p>Amount: <input id="amount"></p>
+        <p>Tip Percentage: <input id="percentage"></p>
+        <hr />
+        <p>Tip: <input id="tip" disabled="disabled"></p>
+        <p>Total: <input id="total" disabled="disabled"></p>
+
+        <div class="priceWithTip"></div>
+        <input type="submit" id="submitTwo" value="priceWithTip" onclick="calculateGrandTotal"/>
+    </form> -->
+                <% end %>
+</body>

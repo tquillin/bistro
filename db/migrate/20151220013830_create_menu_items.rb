@@ -11,7 +11,9 @@ class CreateMenuItems < ActiveRecord::Migration
   def change
       change_table :menu_items do |t|
           t.string :food
+          t.string :food1
           t.integer :price
+          t.integer :price1
           t.references :party
           t.references :staff
           t.references :ordered_item

@@ -1,5 +1,5 @@
 class MenuItemsController < ApplicationController
-  before_filter :require_login 
+  before_filter :require_login
 
   # menu_items GET    /menu_items(.:format)          menu_items#index
   def index
@@ -28,7 +28,7 @@ class MenuItemsController < ApplicationController
 
   private
     def menu_item_params
-        params.require(:menu_item).permit(:food, :category, :description, :price, :party, :staff, :ordered_item)
+        params.require(:menu_item).permit(:food, :food1, :category, :description, :price, :price1, :party, :staff, :ordered_item)
     end
 
 

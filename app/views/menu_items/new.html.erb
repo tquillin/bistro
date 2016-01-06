@@ -4,7 +4,11 @@
 <%= form_for @menu_items, html: {class: "menuform"} do |f| %>
   <%= f.label :food %>
   <%= f.text_field :food %>
+  <%= f.label :food1 %>
+  <%= f.text_field :food1 %>
   <%= f.label :price %>
   <%= f.number_field :price, html: {class: "foodprice"}%>
+  <%= f.label :price1 %>
+  <%= f.number_field :price1, html: {class: "foodprice1"}%>
   <%= f.submit "Create Menu Items" %>
   <% end %>
