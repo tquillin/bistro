@@ -20,15 +20,7 @@ class PartiesController < ApplicationController
       @party = Party.new
     end
 
-    def update
-      party = Party.find(params[:id])
-        if party.update(party_params)
-           redirect_to parties_path
-        else
-            flash[:error] = party.errors.full_messages
-            redirect_to edit_party_path(party.id)
-          end
-    end
+
 
     def edit
       @party = Party.find(params[:id])
@@ -38,9 +30,23 @@ class PartiesController < ApplicationController
       @party = Party.find(params[:id])
     end
 
-    def delete
+    def update
       party = Party.find(params[:id])
-      redirect_to parties_path
+             redirect_to party_path
+    end 
+
+    #     if party.update(party_params)
+    #        redirect_to party_path
+    #       #  redirect_to party_path(party)
+    #     else
+    #         flash[:error] = party.errors.full_messages
+    #         redirect_to edit_party_path(@party)
+    #       end
+    # end
+
+    def destroy
+      Party.delete(params[:id])
+      redirect_to party_path
     end
 
   private

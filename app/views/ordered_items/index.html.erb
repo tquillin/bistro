@@ -1,4 +1,6 @@
-<body onload='hideTotal()'>
+<!-- <%= stylesheet_link_tag    'ordered_items', media: 'all', 'data-turbolinks-track' => true %> -->
+
+<body class="all">
     <div id="wrap">
       <form action="" id="menuform" onsubmit="return false;">
 
@@ -18,16 +20,14 @@
                 <br /><%= ordered_item.menu_item.food %>
                 <br /><br />Main Course :<br /> <%= ordered_item.menu_item.food1 %> </h3>
 
-                    <h4 class="selectedAppetizer">Total: $ <%= ordered_item.menu_item.price  %></h4>
+                    <h4 class="selectedAppetizer"  type="range" min="0" max="255" >Total: $ <%= ordered_item.menu_item.price  %></h4>
 
-                    <h4 class="selectedAppetizer1">Total: $ <%= ordered_item.menu_item.price1  %></h4>
+                    <h4 class="selectedAppetizer1" type="range" min="0" max="255" >Total: $ <%= ordered_item.menu_item.price1  %></h4>
 
 
 
-                <button onclick="calculateTotal()" >Calculate</button>
-                <p id="bill">
-                    
-                </p>
+                <button id="calculateTotal" onclick="calculateTotal()" >Calculate</button>
+                <!-- <p id="bill">Total Bill: </p> -->
               <br />
           </div>
               <!-- <input type="submit" id="submit" value="SubTotal" onclick="calculateTotal()"> -->

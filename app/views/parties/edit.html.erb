@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
+
+
+<div class="container">
+
+  <div class="top">
+      <h1> Welcome <%= current_staff.name %>, edit the party. </h1>
+  </div>
+
+  <div class="seat">
+    <%= form_for @party do |f| %>
+      <%= f.label :name %>
+      <%= f.collection_select :staff_id, Staff.all, :id, :name %>
+      <%= f.label :table_number, "Table Number" %>
+      <%= f.number_field :table_number %><br />
+      <%= f.label :number_of_guest, "Number of Guests" %>
+      <%= f.number_field :number_of_guests %><br />
+      <%= f.label :paid, "Did they pay?" %>
+      <%= f.number_field :paid %><br />
+      <%= f.submit "Seat Party"%>
+    <% end %>
+
+      <% if flash[:error] %>
+          <% flash[:error].each do |error| %>
+          <p class="error"> <%= error %> </p>
+          <% end %>
+        <% end %>
+      </div>
+
+
+</div>

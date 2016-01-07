@@ -1,3 +1,84 @@
+var $el;
+var $foodPrice;
+var $foodPriceOne;
+var $billPrice;
+$(function(){
+  calculateTotal();
+});
+
+function getFoodPrice(){
+  // var $foodPrice = $('<h2>').addClass('foodPrice');
+  var $foodPrice = $('.selectedAppetizer').val;
+  return $foodPrice;
+};
+
+
+function getFoodPriceOne(){
+  // var $foodPriceOne = $('<h2>').addClass('foodPriceOne');
+  var $foodPriceOne = $('.selectedAppetizer1').val;
+  return $foodPriceOne;
+};
+
+function calculateTotal(){
+    // + getDessertPrice() + getRedWinePrice();
+    var $el = $('<h3>').addClass('totalBill');
+    var $billPrice = $('<div>').addClass('bill');
+    $billPrice = $foodPrice + $foodPriceOne;
+    $el.append($billPrice);
+
+    return $el; 
+    // document.getElementById("bill").innerHTML = billPrice;
+};
+
+// document.getElementById("calculateTotal").addEventListener("click", calculateFood);
+// function calculateFood(){
+//
+//     // var valueApp=0;
+//     // var valueMC=0;
+//     // var
+//     var valueFood = document.getElementById("#bill");
+//     var foodPrice = document.getElementsByClassName('selectedAppetizer').value;
+//     var foodPriceOne = document.getElementsByClassName('selectedAppetizer1').value;
+//
+//
+//     // var features = new Array(valueFood);
+//     // for (var i = 0; i < features.length; i++) {
+//     //   valueApp = parseInt(valueFood[i].innerHTML);
+//     // }
+//     calculateFood = valueApp
+//     // valueMC = document.getElementsByClassName('selectedfood2').value;
+//
+//     // var billPrice = parseInt(valueApp + valueMC);
+//
+//     // divobj.style.display='block';
+//
+//     // document.getElementById("bill").innerHTML = "Total Bill $"+billPrice;
+//     // console.log(billPrice);
+//     return calculateFood;
+//   };
+//   function calculateFoodOne(){
+//
+//
+//       var valueMC=0;
+//
+//       var valueFood = document.getElementsByClassName('selectedfood2').value;
+//
+//       // valueMC = document.getElementsByClassName('selectedfood2').value;
+//       var features = new Array(valueFood.length);
+//       for (var i = 0; i < features.length; i++) {
+//         valueFood = parseInt(valueFood[i].innerHTML)
+//       }calculateFoodOne = valueFood
+//       // var billPrice = parseInt(valueApp + valueMC);
+//
+//       // divobj.style.display='block';
+//
+//       // document.getElementById("bill").innerHTML = "Total Bill $"+billPrice;
+//       // console.log(billPrice);
+//       return calculateFoodOne;
+// };
+
+
+
  // var appetizer_prices = new Array();
  // appetizer_prices["Feeds1"]=8;
  // appetizer_prices["Feeds2"]=6;
@@ -36,49 +117,9 @@
 //   document.divobj.style.display= calculateTotal();
 // });
 
-function calculateFood(){
-
-    var valueApp=0;
-    // var valueMC=0;
-
-    var valueFood = document.getElementsByClassName('selectedfood1').value;
-
-    var features = new Array(valueFood.length);
-    for (var i = 0; i < features.length; i++) {
-      valueApp = parseInt(valueFood[i].innerHTML);
-    }
-    calculateFood = valueApp
-    // valueMC = document.getElementsByClassName('selectedfood2').value;
-
-    // var billPrice = parseInt(valueApp + valueMC);
-
-    // divobj.style.display='block';
-
-    // document.getElementById("bill").innerHTML = "Total Bill $"+billPrice;
-    // console.log(billPrice);
-    return calculateFood;
-  };
-
-  function calculateFoodOne(){
 
 
-      var valueMC=0;
 
-      var valueFood = document.getElementsByClassName('selectedfood2').value;
-
-      // valueMC = document.getElementsByClassName('selectedfood2').value;
-      var features = new Array(valueFood.length);
-      for (var i = 0; i < features.length; i++) {
-        valueFood = parseInt(valueFood[i].innerHTML)
-      }calculateFoodOne = valueFood
-      // var billPrice = parseInt(valueApp + valueMC);
-
-      // divobj.style.display='block';
-
-      // document.getElementById("bill").innerHTML = "Total Bill $"+billPrice;
-      // console.log(billPrice);
-      return calculateFoodOne;
-); 
    // var priceOne=0;
    // var theForm = document.forms["menuform"];
 
@@ -166,18 +207,14 @@ function calculateFood(){
 //     divobj.innerHTML = "Total Bill $"+billPrice;
 // }
 
-function calculateTotal(){
-    // + getDessertPrice() + getRedWinePrice();
-    var billPrice = calculateFood + calculateFoodOne;
-    document.getElementById("bill").innerHTML = billPrice;
-};
 
 
-function hideTotal()
-{
-    var divobj = document.getElementById('totalPrice');
-    document.getElementById('bill').style.display='none';
-};
+
+// function hideTotal()
+// {
+//     var divobj = document.getElementById('totalPrice');
+//     document.getElementById('bill').style.display='none';
+// };
 
 // console.log("...hello world3");
 // function calculateTip()

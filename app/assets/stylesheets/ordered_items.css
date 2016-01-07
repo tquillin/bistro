@@ -18,6 +18,15 @@ body {
 #totalPrice {
   color: red;
 }
-#bill p {
+#bill {
   color: black;
+}
+p {
+  color: black;
+}
+h3  {
+  color: black;
+}
+.all {
+  background-color: bisque;
 }
