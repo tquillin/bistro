@@ -16,7 +16,8 @@ Things you may want to cover:
   Columns include but aren't limited to username, password, food, price, and references connecting the aforementioned tables. 
 * Database initialization
 
-* How to run the test suite
+* How to run the test suite:
+
   https://afternoon-headland-8667.herokuapp.com/ 
   the above link will take to the site which is hosted on Heroku. 
   
