@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def show
      @staff = Staff.find(params[:id])
   end
@@ -33,5 +33,14 @@ class SessionsController < ApplicationController
      @staff = Staff.find(params[:id])
   end
 end
+
+# DESTROY: Remove a record from the database delete '/:id'
+
+  def destroy
+    Session.delete(params[:staff_id]) = nil
+    redirect_to staffs_path
+    # staff = Staff.find(params[:id])
+    #   redirect_to staffs_path
+  end
 
 end
