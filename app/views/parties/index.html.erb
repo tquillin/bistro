@@ -10,8 +10,7 @@
     <a href="/parties/new">Seat another Party</a>
     <a href="/ordered_items/new">Place an Order</a>
 
-    <%= button_to 'Edit', edit_party_path(@party), method: :get %>
-    <%= button_to 'Delete', party_path(@party), method: :delete %>
+    <%= button_to 'Delete', parties_path(@party), method: :delete %>
 
   </div>
 

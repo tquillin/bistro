@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :parties
   resources :ordered_items
   resources :menu_items
+  resources :sessions
 
   root "welcome#index"
 
@@ -11,8 +12,8 @@ Rails.application.routes.draw do
   get "/log_in" => "staffs#log_in"
   get "/sign_up" => "staffs#sign_up"
   post "/session" => "session#create"
-  delete "/session" => "sessions#destroy"
-
+  delete "/logout" => "sessions#destroy"
+  delete "/parties" => "parties#destroy"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

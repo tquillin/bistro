@@ -19,20 +19,32 @@ class SessionsController < ApplicationController
         redirect_to staffs_path
   end
 
-  def create
-    staff = Staff.find_by(username: params[:username])
-    if staff && staff.authenticate(params[:password])
-      session[:staff_id] = staff.id
-      redirect_to staffs_index_path
-    else
-      redirect_to staffs_path
-    end
-  end
+  # def create
+  #   @staff = Staff.create(staff_params)
+  #     redirect_to staff_path(staff)
+  # end
+
+  # def create
+  #
+  #   @staff = Staff.create(staff_params)
+  #
+  #     redirect_to staff_path(staff)
+  #
+  # end
+
+  # def create
+  #   staff = Staff.find_by(username: params[:username])
+  #   if staff && staff.authenticate(params[:password])
+  #     session[:staff_id] = staff.id
+  #     redirect_to staffs_path
+  #   else
+  #     redirect_to staffs_path
+  #   end
+  # end
 
   def show
      @staff = Staff.find(params[:id])
   end
-end
 
 # DESTROY: Remove a record from the database delete '/:id'
 

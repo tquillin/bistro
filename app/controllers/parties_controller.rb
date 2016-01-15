@@ -15,6 +15,7 @@ class PartiesController < ApplicationController
           redirect_to new_party_path
         end
       end
+    end 
 
     def new
       @party = Party.new
@@ -33,7 +34,7 @@ class PartiesController < ApplicationController
     def update
       party = Party.find(params[:id])
              redirect_to party_path
-    end 
+    end
 
     #     if party.update(party_params)
     #        redirect_to party_path
@@ -46,7 +47,7 @@ class PartiesController < ApplicationController
 
     def destroy
       Party.delete(params[:id])
-      redirect_to party_path
+      redirect_to parties_path
     end
 
   private

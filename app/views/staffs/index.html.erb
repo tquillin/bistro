@@ -5,7 +5,7 @@
       <h1>List of all signed in Staff Members</h1>
   </div>
 
-  <%= form_tag session_path do %>
+  <%= form_tag sessions_path do %>
   <%= label_tag :username %>
     <%= text_field_tag :username %>
     <%= label_tag :password %>
@@ -14,7 +14,7 @@
     <%end%>
     <a href="/staffs/new"> Create New Admin </a><br />
 
-<h1>Logged in staff:<br /><h2> Username: <%= current_staff.username %></h2></h1>
+<h2> Username: <%= current_staff.username %></h2>
+<a href="/staffs/destroy">LogOut</a>
 
-<h3><%= button_to 'Delete' staffs_path method: :delete %></h3>
 </div>
