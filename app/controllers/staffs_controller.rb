@@ -30,6 +30,7 @@ class StaffsController < ApplicationController
         else
           redirect_to staff_path(@staff)
         end
+      end
   #
 
       # staff = Staff.create(staff_params)
@@ -55,19 +56,6 @@ class StaffsController < ApplicationController
     end
 
 
-
-      # def create
-        # staff = Staff.create(staff_params)
-        # if staff.save
-        #   session[:staff_id] = staff.id
-          # redirect_to staff_path(staff)
-        # else
-        #   flash[:error] = staff.errors.full_messages
-        #   redirect_to staffs_path
-        #   end
-        # end
-      # end
-
         def show
           @staff = Staff.find(params[:id])
         end
@@ -84,29 +72,10 @@ class StaffsController < ApplicationController
   # UPDATE: Find and update values in the database put '/:id'
 
   def update
-  staff = Staff.find(params[:id])
-    staff.update(staff_params)
-    if  staff.save
-        session[:user_id] = user.id
-        redirect_to staffs_path
-      else
-        flash[:error] = staff.errors.full_messages
-        redirect_to update_staff_path(staff.id)
-      end
-    end
+  @staff = Staff.find(params[:id])
+    current_staff.update(params[:id])
+    redirect_to staffs_path
   end
-
-  # def update
-  # staff = Staff.find(params[:id])
-  #   if  staff.update(staff_params)
-  #     redirect_to parties_path
-  #     else
-  #       flash[:error] = staff.errors.full_messages
-  #       redirect_to edit_staff_path(staff.id)
-  #     end
-  #   end
-  #
-  #
   # DESTROY: Remove a record from the database delete '/:id'
 
   def destroy

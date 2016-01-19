@@ -1,1 +1,8 @@
-<%= @staff.username %>
+<h1>Edit Staff Member</h1>
+<%= form_for current_staff do |f| %>
+  <p> Name <%= f.text_field :name %> </p>
+  <p> Username <%= f.text_field :username %> </p>
+  <p> Password <%= f.password_field :password %> </p>
+  <p> Password Conf. <%= f.password_field :password_confirmation %> </p>
+  <%=f.submit "Submit", class: "btn btn-primary" %>
+<%end%>

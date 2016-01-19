@@ -16,5 +16,5 @@
 
 <h2> Username: <%= current_staff.username %></h2>
 <a href="/staffs/destroy">LogOut</a>
-
+<%= button_to 'Edit', edit_staff_path(current_staff), method: :get%>
 </div>

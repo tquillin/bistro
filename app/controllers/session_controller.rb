@@ -46,6 +46,12 @@ class SessionsController < ApplicationController
      @staff = Staff.find(params[:id])
   end
 
+  def update
+  staff = current_staff.find(params[:id])
+    current_staff.update(params[:id])
+    redirect_to staffs_path
+  end
+
 # DESTROY: Remove a record from the database delete '/:id'
 
   def destroy
