@@ -2,7 +2,7 @@ class StaffsController < ApplicationController
 
   def index
     @staffs = Staff.all
-    @staff = Staff.new
+    # @staff = Staff.new
   end
   #
   # # NEW Provide a form to create a new resource
@@ -51,6 +51,7 @@ class StaffsController < ApplicationController
 
 
     def create
+      # @staff = Staff.create(staff[:)
       @staff = Staff.create(staff_params)
         redirect_to staff_path(staff)
     end
