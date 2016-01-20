@@ -8,15 +8,19 @@ Things you may want to cover:
 * Ruby version
 
 * System dependencies
-
+  Gems used: bcrypt, awesome_print, bye bug, rspec-rails, pry, rails_12factor
 * Configuration
 
 * Database creation
-
+  There are 4 tables: Staff, Party, Menu Items, Ordered Items
+  Columns include but aren't limited to username, password, food, price, and references connecting the aforementioned tables. 
 * Database initialization
 
-* How to run the test suite
+* How to run the test suite:
 
+  https://afternoon-headland-8667.herokuapp.com/ 
+  the above link will take to the site which is hosted on Heroku. 
+  
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
